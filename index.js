@@ -28,4 +28,5 @@ app.get('/api/rentcast', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('BLK Wholesale API running'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log('BLK Wholesale API running on port ' + PORT));
