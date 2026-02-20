@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+app.get('/', (req, res) => {
+  res.json({ status: 'BLK Wholesale API is live' });
+});
+
 app.get('/api/rentcast', async (req, res) => {
   const { city, state, limit = 20 } = req.query;
   
@@ -29,4 +33,4 @@ app.get('/api/rentcast', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('BLK Wholesale API running on port ' + PORT));
+app.listen(PORT, () => console.log(`BLK Wholesale API running on port ${PORT}`));
